@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collect moments. Make memories.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- スクロールで出る肉球 -->
+    <div id="paw-container" aria-hidden="true"></div>
+
+    <main class="container">
+
+        <!-- TOP -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Collect moments.<br>Make memories.</h1>
+            </div>
+        </section>
+
+        <!-- CALENDAR -->
+        <section class="calendar-section">
+            <div class="section-heading">
+                <h2>カレンダー</h2>
+            </div>
+
+            <div class="calendar-card">
+                <div class="calendar-month">
+                    <h3 id="month-year">2026年12月</h3>
+                </div>
+
+                <div id="calendar" class="calendar-grid"></div>
+            </div>
+        </section>
+
+        <!-- SELECTED DATE -->
+        <section class="selected-section">
+            <div class="section-heading">
+                <h2 id="selected-date">2026.12.01</h2>
+            </div>
+
+            <div id="selected-list" class="item-list"></div>
+        </section>
+
+        <!-- ADD -->
+        <section class="add-section">
+            <div class="section-heading">
+                <h2>追加</h2>
+            </div>
+
+            <div class="form-card">
+
+                <label for="item-input">タイトル</label>
+                <input
+                    type="text"
+                    id="item-input"
+                    maxlength="100"
+                    placeholder="例：行ってみたいカフェ"
+                >
+
+                <label for="category-input">カテゴリー</label>
+                <select id="category-input">
+                    <option value="PLACE">場所・旅行</option>
+                    <option value="FOOD">カフェ・レストラン</option>
+                    <option value="MOVIE">映画・ドラマ</option>
+                    <option value="YOUTUBE">YouTube</option>
+                    <option value="DO">やりたいこと</option>
+                    <option value="OTHER">その他</option>
+                </select>
+
+                <label for="date-input">日付</label>
+                <input
+                    type="date"
+                    id="date-input"
+                    min="2026-12-01"
+                    max="2026-12-31"
+                >
+
+                <button id="add-button" class="main-button">
+                    ＋
+                </button>
+
+                <p id="form-message"
+                   class="form-message"
+                   aria-live="polite"></p>
+            </div>
+        </section>
+
+        <!-- SOMEDAY LIST -->
+        <section class="list-section">
+            <div class="section-heading">
+                <h2>いつかやりたいこと</h2>
+            </div>
+
+            <label class="filter-label" for="wishlist-filter">
+                カテゴリー
+            </label>
+
+            <select id="wishlist-filter" class="filter-select">
+                <option value="ALL">すべて表示</option>
+                <option value="PLACE">行きたい場所・旅行</option>
+                <option value="FOOD">カフェ・レストラン</option>
+                <option value="MOVIE">映画・ドラマ</option>
+                <option value="YOUTUBE">YouTube</option>
+                <option value="DO">食</option>
+                <option value="OTHER">その他</option>
+            </select>
+
+            <div id="wishlist" class="item-list"></div>
+        </section>
+
+        <!-- COMPLETED LIST -->
+        <section class="completed-section">
+            <div class="section-heading">
+                <h2>記録</h2>
+            </div>
+
+            <label class="filter-label" for="completed-filter">
+                カテゴリー
+            </label>
+
+            <select id="completed-filter" class="filter-select">
+                <option value="ALL">すべて表示</option>
+                <option value="PLACE">行きたい場所・旅行</option>
+                <option value="FOOD">カフェ・レストラン</option>
+                <option value="MOVIE">映画・ドラマ</option>
+                <option value="YOUTUBE">YouTube</option>
+                <option value="DO">食</option>
+                <option value="OTHER">その他</option>
+            </select>
+
+            <div id="completed-list" class="item-list"></div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <p>★</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
